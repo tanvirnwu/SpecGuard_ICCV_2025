@@ -7,6 +7,11 @@ from model.conv_bn_relu import ConvBNRelu
 from pytorch_wavelets import DWTForward, DWTInverse
 from options import HiDDenConfiguration
 import torch.fft
+
+# Set deterministic behavior for CUDA to reduce inconsistencies
+torch.backends.cudnn.deterministic = True
+torch.backends.cudnn.benchmark = False
+torch.manual_seed(42)
 # try:
 #     # PyTorch 1.7.0 and newer versions
 #     import torch.fft
@@ -123,13 +128,15 @@ class Decoder(nn.Module):
                             masked_indices[1][:expected_length])
 
         # Extract watermark data from specified positions
-        extracted_values = image_dct[:, 0, selected_indices[0], selected_indices[1]]
+        extracted_values = image_dct[:, 2, selected_indices[0], selected_indices[1]]
+        #print (extracted_values[0])
 
         #decoded_message = (extracted_values > self.threshold).float()
         # decoded_message = (extracted_values > self.strength / 2).float()
         # Use a dynamic threshold for decoding
         threshold = extracted_values.mean(dim=1, keepdim=True)
         decoded_message = (extracted_values > threshold).float()
+        #print (decoded_message[0])
         return decoded_message
 
     def forward(self, image_with_wm):
@@ -139,7 +146,7 @@ class Decoder(nn.Module):
         LL, HH = wavelet_transforms.dwt2(image)
         for i, element in enumerate(HH):
            # print(f"Element {i}: {type(element)}, Shape: {getattr(element, 'shape', 'N/A')}")
-            HH_high = element[:, :, 2, :, :]
+            HH_high = element[:, :, 0, :, :]
         HH_dct = self.dct_2d(HH_high)
         x = self.layers(HH_dct)
         extracted_message = self.extract_dct_watermark(x, self.message_length)

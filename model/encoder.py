@@ -8,6 +8,11 @@ from pytorch_wavelets import DWTForward, DWTInverse
 from model.conv_bn_relu import ConvBNRelu
 from options import HiDDenConfiguration
 import torch.fft
+
+# Set deterministic behavior for CUDA to reduce inconsistencies
+torch.backends.cudnn.deterministic = True
+torch.backends.cudnn.benchmark = False
+torch.manual_seed(42)
 # try:
 #     # PyTorch 1.7.0 and newer versions
 #     import torch.fft
@@ -39,7 +44,7 @@ class Encoder(nn.Module):
         self.conv_channels = config.encoder_channels
         self.num_blocks = config.encoder_blocks
         self.watermark_radius = config.watermark_radius
-        self.strength = 50  # Embedding strength for robustness
+        self.strength = 20  # Embedding strength for robustness
 
         # Encoder layers
         layers = [ConvBNRelu(3, self.conv_channels)]
@@ -80,16 +85,20 @@ class Encoder(nn.Module):
         # Now `message` has shape [batch_size, message_length], and we repeat across channels
         message_length = message.shape[1]
         repeated_message = message[:, None, :].expand(batch_size, channels, message_length)
+        #print (message[0])
 
         # Determine the number of elements in the message and adjust the mask to fit
         num_message_elements = repeated_message.shape[-1]
         selected_indices = (masked_indices[0][:num_message_elements],
                             masked_indices[1][:num_message_elements])
 
+        #print (dct_coeffs[0:, 0, selected_indices[0], selected_indices[1]])
+
         # Apply the watermark to the DCT coefficients at selected indices
         dct_coeffs[:, 0, selected_indices[0], selected_indices[1]] += (
             repeated_message[:, 0, :num_message_elements] * self.strength
         )
+        #print (dct_coeffs[0:, 0, selected_indices[0], selected_indices[1]])
         return dct_coeffs
 
 
@@ -207,9 +216,7 @@ class Encoder(nn.Module):
         LL, HH = wavelet_transforms.dwt2(image)
         for i, element in enumerate(HH):
            # print(f"Element {i}: {type(element)}, Shape: {getattr(element, 'shape', 'N/A')}")
-            HH_high = element[:, :, 2, :, :]
-        #print (HH.shape)    
-        #print (HH_high.shape)
+            HH_high = element[:, :, 0, :, :]
         HH_dct = self.dct_2d(HH_high)
          # Ensure the shape is (batch_size, channels, height, width)
         # if HH_dct.shape[0] != image.shape[0]:
@@ -237,9 +244,10 @@ class Encoder(nn.Module):
         # print (im_w.shape)
         # print (LL.shape,HL.shape,LH.shape)
         for i, element in enumerate(HH):
-            element[:, :, 2, :, :] = im_w
+            element[:, :, 0, :, :] = im_w
         
         watermarked_image = wavelet_transforms.idwt2((LL,HH))
+
 
         # # Continue with neural network layers
         # expanded_message = message.unsqueeze(-1).unsqueeze(-1).expand(-1, -1, self.H, self.W)

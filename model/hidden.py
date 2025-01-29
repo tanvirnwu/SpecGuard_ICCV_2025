@@ -16,7 +16,7 @@ class Hidden:
         other_params = list(self.encoder_decoder.encoder.parameters())
         
         # #Freeze encoder parameters
-        # for param in self.encoder_decoder.encoder.parameters():
+        # for param in self.encoder_decoder.decoder.parameters():
         #     param.requires_grad = False
         
         # Optimizer for only the decoder parameters
