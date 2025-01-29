@@ -8,7 +8,7 @@ If you are still interested in testing, please replace the dataset path and run 
 python main.py new --data-dir [CelebHQ] --batch-size 32 --epochs 300 --name "celebhq-subset" --size 256 --message 128 --watermark-radius 50 --tensorboard --enable-fp16 --noise 'crop((0.2,0.3),(0.4,0.5))+cropout((0.11,0.22),(0.33,0.44))+dropout(0.2,0.3)+jpeg()'
 ````
 
-Upon acceptance, we will further enhance the documentation to provide exact information to run WaveGuard to achieve the best performance.
+If you face further issue please create an issue, we will resolve. Upon acceptance, we will further enhance the documentation to provide exact information to run WaveGuard to achieve the best performance. 
 
 
 [1] Karras, Tero. "Progressive Growing of GANs for Improved Quality, Stability, and Variation." arXiv preprint arXiv:1710.10196 (2017).
