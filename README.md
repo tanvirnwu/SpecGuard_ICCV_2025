@@ -6,18 +6,18 @@
 
 <h6 align="center">
   Inzamamul Aalm<sup>
-    <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Google_Scholar_logo.png" alt="Google Scholar" width="14">
+    <a href="" target="_blank">
+      <img src="https://images.icon-icons.com/2108/PNG/512/google_scholar_icon_130918.png" alt="Google Scholar" width="14">
     </a>
   </sup>,
   Md Tanvir Islam<sup>
-    <a href="https://scholar.google.com/citations?user=YYYYY" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Google_Scholar_logo.png" alt="Google Scholar" width="14">
+    <a href="https://scholar.google.com/citations?user=UvINe-sAAAAJ&hl=en" target="_blank">
+      <img src="https://images.icon-icons.com/2108/PNG/512/google_scholar_icon_130918.png" alt="Google Scholar" width="14">
     </a>
   </sup>,
   Khan Muhammad<sup>
     <a href="https://scholar.google.co.kr/citations?user=k5oUZyQAAAAJ&hl=en" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Google_Scholar_logo.png" alt="Google Scholar" width="14">
+      <img src="https://images.icon-icons.com/2108/PNG/512/google_scholar_icon_130918.png" alt="Google Scholar" width="14">
     </a>
   </sup>,
   Simon S. Woo<sup>*</sup>
