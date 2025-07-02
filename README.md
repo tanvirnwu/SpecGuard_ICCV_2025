@@ -1,8 +1,8 @@
 <h4 align="center"><strong><a href="https://www2025.thewebconf.org/short-papers">Accepted by International Conference on Computer Vision (ICCV 2025), Honolulu, Hawai, USA </a></strong></h4>
 <h2 align="center"><strong>SpecGuard: Spectral Projection-based Advanced Invisible Watermarking<a href="assets/SpecGuard_ICCV_2025.pdf" target="_blank"> [Paper]</a></strong></h2>
 <h6 align="center">Inzamamul Aalm, Md Tanvir Islam, Khan Muhammad<p align="center">
-  <a href="https://scholar.google.com/citations?user=XXXXXX" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Google_Scholar_logo.png" alt="Google Scholar" width="32" height="32">
+  <a href="https://scholar.google.co.kr/citations?user=k5oUZyQAAAAJ&hl=en" target="_blank">
+    <img src="https://images.icon-icons.com/2108/PNG/512/google_scholar_icon_130918.png" alt="Google Scholar" width="32" height="32">
   </a>
 </p>
 , Simon S. Woo<sup>*</sup></h6>
