@@ -4,8 +4,8 @@
 <h6 align="center">| Sungkyunkwan University, Republicp of Korea | *Corresponding Author |</h6> 
 <hr>
 
-![](./assets/SADRE_Fig.jpg)
-
+![](.assets/Watermarking.jpg)
+![](.assets/SpecGuard.jpg.jpg)
 
 ## Requirements
 
