@@ -5,7 +5,8 @@
 <hr>
 
 ![](.assets/Watermarking.jpg)
-![](.assets/SpecGuard.jpg.jpg)
+
+![](.assets/SpecGuard.jpg)
 
 ## Requirements
 
