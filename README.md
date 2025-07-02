@@ -20,7 +20,9 @@
       <img src="https://images.icon-icons.com/2108/PNG/512/google_scholar_icon_130918.png" alt="Google Scholar" width="14">
     </a>
   </sup>,
-  Simon S. Woo<sup>*</sup>
+  Simon S. Woo<sup>*, <a href="https://scholar.google.com/citations?user=mHnj60cAAAAJ&hl=en" target="_blank">
+      <img src="https://images.icon-icons.com/2108/PNG/512/google_scholar_icon_130918.png" alt="Google Scholar" width="14">
+    </a></sup>
 </h6>
 
 <h6 align="center">| Sungkyunkwan University, Republic of Korea | *Corresponding Author |</h6>
