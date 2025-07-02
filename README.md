@@ -29,8 +29,6 @@
 <hr>
 
 
-![](https://raw.githubusercontent.com/tanvirnwu/SpecGuard_ICCV_2025/refs/heads/main/assets/Watermarking.jpg)
-
 ![](https://raw.githubusercontent.com/tanvirnwu/SpecGuard_ICCV_2025/refs/heads/main/assets/SpecGuard.jpg)
 
 ## Requirements
